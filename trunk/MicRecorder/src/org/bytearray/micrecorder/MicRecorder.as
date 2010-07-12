@@ -47,7 +47,7 @@ package org.bytearray.micrecorder
 	 * This tiny helper class allows you to quickly record the audio stream coming from the Microphone and save this as a physical file.
 	 * A WavEncoder is bundled to save the audio stream as a WAV file
 	 * @author Thibault Imbert - bytearray.org
-	 * @version 1.0
+	 * @version 1.1
 	 * 
 	 */	
 	public final class MicRecorder extends EventDispatcher
