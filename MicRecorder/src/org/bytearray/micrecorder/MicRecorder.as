@@ -94,8 +94,7 @@ package org.bytearray.micrecorder
 			if ( _microphone == null )
 				_microphone = Microphone.getMicrophone();
 			 
-			if ( _difference != 0 )
-				_difference = getTimer();
+			_difference = getTimer();
 			
 			_microphone.setSilenceLevel(_silenceLevel, _timeOut);
 			_microphone.gain = _gain;
