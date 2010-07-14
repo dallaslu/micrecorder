@@ -47,7 +47,7 @@ package org.bytearray.micrecorder
 	 * This tiny helper class allows you to quickly record the audio stream coming from the Microphone and save this as a physical file.
 	 * A WavEncoder is bundled to save the audio stream as a WAV file
 	 * @author Thibault Imbert - bytearray.org
-	 * @version 1.1
+	 * @version 1.2
 	 * 
 	 */	
 	public final class MicRecorder extends EventDispatcher
@@ -120,7 +120,7 @@ package org.bytearray.micrecorder
 			
 			dispatchEvent( _recordingEvent );
 			
-			while(event.data.bytesAvailable)
+			while(event.data.bytesAvailable > 0)
 				_buffer.writeFloat(event.data.readFloat());
 		}
 		
@@ -226,6 +226,16 @@ package org.bytearray.micrecorder
 		public function get output():ByteArray
 		{
 			return _output;
+		}
+		
+		/**
+		 * 
+		 * @return 
+		 * 
+		 */		
+		public override function toString():String
+		{
+			return "[MicRecorder gain=" + _gain + " rate=" + _rate + " silenceLevel=" + _silenceLevel + " timeOut=" + _timeOut + " microphone:" + _microphone + "]";
 		}
 	}
 }
